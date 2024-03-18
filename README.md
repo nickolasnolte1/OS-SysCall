@@ -9,15 +9,26 @@ El objetivo principal de este proyecto es brindar una comprensión práctica de 
 - Ubuntu 16.04.6 Desktop
 - [Linux Kernel 4.15.10](https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.15.10.tar.xz)
 
-
-
-
+### Contexto
 <details>
-  <summary>## Qué es una Syscall</summary>
+  <summary>Qué es una Syscall</summary>
   <ol>
      Una syscall, o llamada al sistema, es una interfaz entre un programa de usuario y el sistema operativo. Es utilizada para que los programas de usuario puedan solicitar servicios o recursos del sistema operativo.
 
 Estas llamadas al sistema son esenciales para realizar operaciones que de otra manera serían inaccesibles para un programa de usuario, como el acceso a hardware o la manipulación de archivos en el sistema. Las syscalls permiten a los programas interactuar con el sistema operativo de una manera segura y controlada, asegurando que solo se realicen operaciones permitidas y que se mantenga la estabilidad y seguridad del sistema.
+  </ol>
+</details>
+
+
+<details>
+  <ol>
+    En un sistema operativo Linux, la syscall funciona como una puerta de enlace entre el programa de usuario y el núcleo del sistema operativo. Cuando un programa necesita acceder a un recurso o servicio del sistema operativo, genera una interrupción de software a través de una syscall. Esta interrupción cambia el sistema del modo de usuario al modo de núcleo, permitiendo al programa interactuar de manera segura con el núcleo del sistema operativo.
+
+El proceso exacto es el siguiente: Primero, el programa coloca los argumentos de la syscall en los registros del procesador. Luego, el programa realiza la syscall, que se implementa como una interrupción de software. Esta interrupción cambia el sistema del modo de usuario al modo de núcleo. Una vez en el modo de núcleo, el sistema operativo examina los argumentos de la syscall y determina qué servicio o recurso del sistema operativo se está solicitando. Luego, el sistema operativo ejecuta la operación solicitada, coloca el resultado en un lugar donde el programa pueda acceder a él (generalmente otro registro del procesador), y finalmente devuelve el control al programa de usuario.
+
+Cada syscall tiene asociado un número único que el sistema operativo usa para identificar qué servicio o recurso se está solicitando. Los programas suelen utilizar una biblioteca de funciones, como la biblioteca de C de Unix (glibc), que proporciona funciones de alto nivel que a su vez realizan las syscalls necesarias.
+
+Es importante recordar que, aunque este es el mecanismo general de cómo funcionan las syscalls en Linux, los detalles específicos pueden variar dependiendo de la arquitectura del procesador y la versión del sistema operativo.
   </ol>
 </details>
 
