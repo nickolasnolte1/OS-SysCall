@@ -11,7 +11,7 @@ El objetivo principal de este proyecto es brindar una comprensión práctica de 
 
 ### Contexto
 <details>
-  <summary>Qué es una Syscall</summary>
+  <summary>¿Qué es una Syscall</summary>
   <ol>
      Una syscall, o llamada al sistema, es una interfaz entre un programa de usuario y el sistema operativo. Es utilizada para que los programas de usuario puedan solicitar servicios o recursos del sistema operativo.
 
@@ -21,6 +21,7 @@ Estas llamadas al sistema son esenciales para realizar operaciones que de otra m
 
 
 <details>
+  <summary>¿Cómo funciona una Syscall?</summary>
   <ol>
     En un sistema operativo Linux, la syscall funciona como una puerta de enlace entre el programa de usuario y el núcleo del sistema operativo. Cuando un programa necesita acceder a un recurso o servicio del sistema operativo, genera una interrupción de software a través de una syscall. Esta interrupción cambia el sistema del modo de usuario al modo de núcleo, permitiendo al programa interactuar de manera segura con el núcleo del sistema operativo.
 
