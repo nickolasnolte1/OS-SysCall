@@ -1,19 +1,19 @@
 # OS-SysCall
 
-Este repositorio contiene la implementación de system calls en el kernel de Linux para resolver dos problemas específicos: la verificación de expresiones aritméticas y el cálculo del producto punto de vectores. Estos problemas implican el desarrollo de funciones en el kernel que son accesibles desde programas de usuario a través de system calls.
+Este repositorio contiene la implementación de system calls perzonalizadas en el kernel de Linux para resolver dos problemas específicos: la verificación de expresiones aritméticas y el cálculo del producto punto de vectores. Estos problemas implican el desarrollo de funciones en el kernel que son accesibles desde programas de usuario a través de system calls.
 
-El objetivo principal de este proyecto es brindar una comprensión práctica de cómo agregar funcionalidades al kernel de Linux mediante el desarrollo de system calls y cómo utilizar estas funcionalidades desde programas de usuario. Se explorarán los pasos necesarios para implementar las system calls, compilar el kernel y crear programas de usuario que hagan uso de estas llamadas al sistema.
+El objetivo principal de este proyecto es brindar una comprensión práctica de cómo agregar funcionalidades al kernel de Linux mediante el desarrollo de system calls personalizadas y cómo utilizar estas funcionalidades desde programas de usuario. Se explorarán los pasos necesarios para implementar las system calls, compilar el kernel y crear programas de usuario que hagan uso de estas llamadas al sistema.
 
 ## Herramientas utilizadas
-- VirtualBox 7.0.14
-- Ubuntu 16.04.6 Desktop
-- [Linux Kernel 4.15.10](https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.15.10.tar.xz)
+- VirtualBox 7.0.14: para la creación de un entorno virtualizado en el que se ejecutará una distribución Linux.
+- Ubuntu 16.04.6 Desktop: como el sistema operativo sobre el que se compila y prueba el kernel de Linux.
+- [Linux Kernel 4.15.10](https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.15.10.tar.xz) : la versión específica del kernel de Linux que se modificó.
 
 ### Contexto
 <details>
   <summary>¿Qué es una Syscall</summary>
   <ol>
-     Una syscall, o llamada al sistema, es una interfaz entre un programa de usuario y el sistema operativo. Es utilizada para que los programas de usuario puedan solicitar servicios o recursos del sistema operativo.
+     Una syscall, o llamada al sistema, es un punto de interacción fundamental entre los programas de usuario y el núcleo (kernel) del sistema operativo. Permite a los programas solicitar servicios del kernel, tales como operaciones de E/S, creación y gestión de procesos, y acceso a hardware, de manera controlada y segura.
 
 Estas llamadas al sistema son esenciales para realizar operaciones que de otra manera serían inaccesibles para un programa de usuario, como el acceso a hardware o la manipulación de archivos en el sistema. Las syscalls permiten a los programas interactuar con el sistema operativo de una manera segura y controlada, asegurando que solo se realicen operaciones permitidas y que se mantenga la estabilidad y seguridad del sistema.
   </ol>
@@ -39,9 +39,9 @@ El objetivo de este problema es desarrollar una función que determine si una ex
 ## Implementación de la System Call
 La función de verificación de expresiones aritméticas se implementará como una system call en el kernel de Linux. El proceso para agregar esta system call implica los siguientes pasos:
 
-1. Implementación de la Función en el Kernel: Se desarrollará una función en el código fuente del kernel que llevará a cabo la verificación de la expresión aritmética. Esta función recibirá como parámetro un puntero a la cadena que contiene la expresión y retornará un valor booleano indicando si la expresión está correctamente cerrada o no.
-2. Definición de la System Call: Se definirá una nueva system call en el kernel, que será el punto de entrada para invocar la función de verificación desde el espacio de usuario.
-3. Compilación del Kernel: Se recompilará el kernel de sistema operativo para incorporar la nueva system call.
+1. Implementación de la Función en el Kernel: Se desarrollará una función en C, en el código fuente del kernel que llevará a cabo la verificación de la expresión aritmética. Esta función recibirá como parámetro un puntero a la cadena que contiene la expresión y retornará un valor booleano indicando si la expresión está correctamente cerrada o no.
+2. Definición de la System Call: Se definirá una nueva system call en el kernel, que será el punto de entrada para invocar la función de verificación desde el espacio de usuario. Este tiene un número de identificación único 333.
+4. Compilación del Kernel: Se recompilará el kernel de sistema operativo para incorporar la nueva system call.
 
 
 # Problema 2: Producto Punto de Vectores
@@ -49,9 +49,11 @@ La función de verificación de expresiones aritméticas se implementará como u
 El segundo problema consiste en desarrollar una función que calcule el producto punto de dos vectores de tamaño n. Esta función se implementará como una system call en el kernel de Linux, y se creará un programa de usuario que haga uso de esta system call para calcular el producto punto de dos vectores dados.
 
 ## Implementación de la System Call
-La función de cálculo del producto punto de vectores se implementará como una system call en el kernel de Linux. El proceso para agregar esta system call será similar al descrito para el Problema 1.
+La función de cálculo del producto punto de vectores se implementará como una system call en el kernel de Linux. Similar al Problema 1, se sigue un proceso de implementación, definición, y compilación en el kernel de Linux. Esta system call se asigna con el número 334.
 
 ## Pasos para compilar el Kernel (sin cambios)
+Detallamos cómo preparar el entorno de compilación, descargar y descomprimir el código fuente del kernel, instalar dependencias necesarias, y finalmente compilar y reinstalar el kernel modificado. Los pasos incluyen:
+
 1. Instalar una distribución estable de Linux (Ubuntu)
 2. Descargar VirtualBox
 3. Montar la imagen asegurarse de darle el espacio de memoria y disco necesario
@@ -79,6 +81,9 @@ La función de cálculo del producto punto de vectores se implementará como una
 10. Para instalar su versión: `sudo make modules_install install`
    
 11. Verificar que compiló correctamente: `uname –r`
+
+# Programa de Prueba
+Se proporciona un programa de prueba en C que demuestra cómo invocar las nuevas system calls desde el espacio de usuario. Este programa pide al usuario que ingrese vectores para el cálculo del producto punto y una expresión para verificar si está balanceada, haciendo uso de las system calls sys_puntoproducto (334) y sys_expresioncerrada (333) respectivamente.
 
 
 ## Pasos para compilar el Kernel modificado (con las nuevas Syscalls)
