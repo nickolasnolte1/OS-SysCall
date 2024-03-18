@@ -115,6 +115,10 @@ graph TD;
 ## Se agregan las Syscalls nuevas a la tabla de syscalls del kernel
 ![image](https://github.com/nickolasnolte1/OS-SysCall/assets/61555652/6dedc58d-d9a3-4265-860c-8a7c287dc63e)
 
+![image](https://github.com/nickolasnolte1/OS-SysCall/assets/61555652/c061cdc9-baa8-4a90-8f75-9609e5c8e1b0)
+
+![image](https://github.com/nickolasnolte1/OS-SysCall/assets/61555652/4842c071-de2d-4fae-9c1a-f3a64050f1ec)
+
 
 
 
