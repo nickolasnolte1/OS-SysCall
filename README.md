@@ -92,6 +92,8 @@ Detallamos cómo preparar el entorno de compilación, descargar y descomprimir e
 # Programa de Prueba
 Se proporciona un programa de prueba en C que demuestra cómo invocar las nuevas system calls desde el espacio de usuario. Este programa pide al usuario que ingrese vectores para el cálculo del producto punto y una expresión para verificar si está balanceada, haciendo uso de las system calls sys_puntoproducto (334) y sys_expresioncerrada (333) respectivamente.
 
+Dentro de nuestro programa de prueba, incluimos la biblioteca estándar *unistd.h* del lenguaje de programación C que proporciona acceso a la API del sistema operativo POSIX (Interfaz de Programación de Aplicaciones para Sistemas Operativos Portátiles). Este archivo de cabecera define varios valores simbólicos y declara varias funciones que son útiles para realizar operaciones a bajo nivel, definiciones de números de system calls y constantes relacionadas con las llamadas al sistema. Esto permite a los programas en espacio de usuario invocar system calls de manera estándar y portátil entre diferentes variantes de UNIX Standar.
+
 ## Diagrama conceptual Usuario - System Call
 
 ```mermaid
