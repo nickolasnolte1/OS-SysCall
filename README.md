@@ -59,11 +59,6 @@ La función de cálculo del producto punto de vectores se implementará como una
    
 11. Verificar que compiló correctamente: `uname –r`
 
-
-`sudo get  `
-`sudo pop`
-`sudo git`
-
 ### Diagrama conceptual Usuario - System Call
 
 ```mermaid
