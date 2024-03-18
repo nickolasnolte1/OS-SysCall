@@ -30,7 +30,7 @@ El segundo problema consiste en desarrollar una función que calcule el producto
 ## Implementación de la System Call
 La función de cálculo del producto punto de vectores se implementará como una system call en el kernel de Linux. El proceso para agregar esta system call será similar al descrito para el Problema 1.
 
-## Pasos
+## Pasos para compilar el Kernel (sin cambios)
 1. Instalar una distribución estable de Linux (Ubuntu)
 2. Descargar VirtualBox
 3. Montar la imagen asegurarse de darle el espacio de memoria y disco necesario
@@ -58,6 +58,14 @@ La función de cálculo del producto punto de vectores se implementará como una
 10. Para instalar su versión: `sudo make modules_install install`
    
 11. Verificar que compiló correctamente: `uname –r`
+
+
+## Pasos para compilar el Kernel modificado (con las nuevas Syscalls)
+.......
+.......
+.......
+.......
+.......
 
 ## Diagrama conceptual Usuario - System Call
 
