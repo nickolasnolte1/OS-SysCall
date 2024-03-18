@@ -59,7 +59,7 @@ La función de cálculo del producto punto de vectores se implementará como una
    
 11. Verificar que compiló correctamente: `uname –r`
 
-### Diagrama conceptual Usuario - System Call
+## Diagrama conceptual Usuario - System Call
 
 ```mermaid
 graph TD;
@@ -83,6 +83,6 @@ graph TD;
 
 ```
 
-### Se agregan las Syscalls nuevas a la tabla de syscalls del kernel
+## Se agregan las Syscalls nuevas a la tabla de syscalls del kernel
 ![image](https://github.com/nickolasnolte1/OS-SysCall/assets/61555652/6dedc58d-d9a3-4265-860c-8a7c287dc63e)
 
