@@ -7,7 +7,10 @@ El objetivo principal de este proyecto es brindar una comprensión práctica de 
 ## Herramientas utilizadas
 - VirtualBox 7.0.14
 - Ubuntu 16.04.6 Desktop
-- Kernel Linux 4.15.10 
+- [Linux Kernel 4.15.10](https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.15.10.tar.xz)
+
+
+
 
 # Problema 1: Verificación de Expresiones Aritméticas
 El objetivo de este problema es desarrollar una función que determine si una expresión aritmética está correctamente cerrada en cuanto a paréntesis y corchetes. Para ello, se debe implementar una llamada al sistema (system call) en el kernel de Linux y crear un programa que haga uso de esta llamada para verificar expresiones aritméticas.
