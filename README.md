@@ -49,6 +49,20 @@ La función de cálculo del producto punto de vectores se implementará como una
    g.	sudo apt-get update
    h.	sudo apt-get upgrade
    ```
+9. Compilar el Kernel
+    ```bash
+    a.	sudo make menuconfig
+    b.	sudo make –j(# de procesadores a usar)
+    ```
+    
+10. Para instalar su versión: `sudo make modules_install install`
+   
+11. Verificar que compiló correctamente: `uname –r`
+
+
+`sudo get  `
+`sudo pop`
+`sudo git`
 
 ### Diagrama conceptual Usuario - System Call
 
