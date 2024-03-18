@@ -117,6 +117,16 @@ graph TD;
     style G fill:#110f85;
 
 ```
+*inicio*: punto de partida del proceso de usuario donde el programa comienza su ejecución
+*llamada a System Call*: se realiza cuando el sistema necesita ejecutar una operación que no puede realizar por sí mismo y requiere los servicios del kernel.
+*transición a modo kernel*: el CPU cambia del modo usuario al modo kernel permitiendole al SO acceder a áreas protegidas de memoria y ejecutar código privilegiado para realizar la tarea solicitada.
+*verificación de syscall y permisos*: el kernel verifica si la syscall invocada existe y si el proceso que hizo la llamada tiene los permisos necesarios para realizar la operación solicitada.
+*recuperación de parametros*: el kernel recupera los parámetros pasados a la syscall desde el programa de usuario.
+*validación de memoria*: el kernel debe validar que las direcciones pasadas por el proceso de usuario sean accesibles y válidas para evitar fallos de seguridad o de sistema
+*ejecución de función de syscall*: con los parámetros validados, el kernel ejecuta la función correspondiente a la syscall. Aquí ocurre la operación solicitada.
+*generación de resultado*: ya cuando se ejecutó la función, se genera un resultado
+*retorno al espacio de usuario*: después de completar la operación, el kernel devuelve el control al programa de usuario, retornando el valor de la syscall para después continuar su ejecución.
+*muestra resultado usuario*: el programa de usuario puede procesar y mostrar el resultado de la llamada al sistema
 
 ### Se agregan las Syscalls nuevas a la tabla de syscalls del kernel ⬇︎
 ![image](https://github.com/nickolasnolte1/OS-SysCall/assets/61555652/6dedc58d-d9a3-4265-860c-8a7c287dc63e)
