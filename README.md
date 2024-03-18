@@ -27,7 +27,7 @@ graph TD;
     subgraph Proceso de Usuario
         A[Inicio] --> B[Llamada a System Call]
     end
-    subgraph Sistema_Operativo
+    subgraph Sistema Operativo
         B --> C[Transición al Modo Kernel]
         C --> D[Verificación de Syscall y Permisos]
         D --> E[Recuperación de Parámetros]
