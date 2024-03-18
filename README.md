@@ -40,4 +40,6 @@ graph TD;
         I --> J[Muestra Resultado al Usuario]
     end
 
+    style G fill:#110f85;
+
 ```
