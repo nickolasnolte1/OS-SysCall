@@ -12,6 +12,15 @@ El objetivo principal de este proyecto es brindar una comprensión práctica de 
 
 
 
+<details>
+  <summary>## Qué es una Syscall</summary>
+  <ol>
+     Una syscall, o llamada al sistema, es una interfaz entre un programa de usuario y el sistema operativo. Es utilizada para que los programas de usuario puedan solicitar servicios o recursos del sistema operativo.
+
+Estas llamadas al sistema son esenciales para realizar operaciones que de otra manera serían inaccesibles para un programa de usuario, como el acceso a hardware o la manipulación de archivos en el sistema. Las syscalls permiten a los programas interactuar con el sistema operativo de una manera segura y controlada, asegurando que solo se realicen operaciones permitidas y que se mantenga la estabilidad y seguridad del sistema.
+  </ol>
+</details>
+
 # Problema 1: Verificación de Expresiones Aritméticas
 El objetivo de este problema es desarrollar una función que determine si una expresión aritmética está correctamente cerrada en cuanto a paréntesis y corchetes. Para ello, se debe implementar una llamada al sistema (system call) en el kernel de Linux y crear un programa que haga uso de esta llamada para verificar expresiones aritméticas.
 
