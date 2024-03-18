@@ -82,16 +82,15 @@ Detallamos cómo preparar el entorno de compilación, descargar y descomprimir e
    
 11. Verificar que compiló correctamente: `uname –r`
 
-# Programa de Prueba
-Se proporciona un programa de prueba en C que demuestra cómo invocar las nuevas system calls desde el espacio de usuario. Este programa pide al usuario que ingrese vectores para el cálculo del producto punto y una expresión para verificar si está balanceada, haciendo uso de las system calls sys_puntoproducto (334) y sys_expresioncerrada (333) respectivamente.
-
-
 ## Pasos para compilar el Kernel modificado (con las nuevas Syscalls)
 .......
 .......
 .......
 .......
 .......
+
+# Programa de Prueba
+Se proporciona un programa de prueba en C que demuestra cómo invocar las nuevas system calls desde el espacio de usuario. Este programa pide al usuario que ingrese vectores para el cálculo del producto punto y una expresión para verificar si está balanceada, haciendo uso de las system calls sys_puntoproducto (334) y sys_expresioncerrada (333) respectivamente.
 
 ## Diagrama conceptual Usuario - System Call
 
