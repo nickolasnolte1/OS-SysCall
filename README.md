@@ -24,10 +24,10 @@ La función de cálculo del producto punto de vectores se implementará como una
 
 ```mermaid
 graph TD;
-    subgraph Proceso de Usuario
+    subgraph Proceso_de_Usuario
         A[Inicio] --> B[Llamada a System Call]
     end
-    subgraph Sistema Operativo
+    subgraph Sistema_Operativo
         B --> C[Transición al Modo Kernel]
         C --> D[Verificación de Syscall y Permisos]
         D --> E[Recuperación de Parámetros]
@@ -36,7 +36,8 @@ graph TD;
         G --> H[Generación de Resultado]
         H --> I[Retorno al Espacio de Usuario]
     end
-    subgraph Proceso de Usuario
+    subgraph Proceso_de_Usuario
         I --> J[Muestra Resultado al Usuario]
     end
+
 ```
