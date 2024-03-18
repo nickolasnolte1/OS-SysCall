@@ -21,3 +21,22 @@ El segundo problema consiste en desarrollar una función que calcule el producto
 
 # Implementación de la System Call
 La función de cálculo del producto punto de vectores se implementará como una system call en el kernel de Linux. El proceso para agregar esta system call será similar al descrito para el Problema 1.
+
+```mermaid
+graph TD;
+    subgraph Proceso_de_Usuario
+        A[Inicio] --> B[Llamada a System Call]
+    end
+    subgraph Sistema_Operativo
+        B --> C[Transición al Modo Kernel]
+        C --> D[Verificación de Syscall y Permisos]
+        D --> E[Recuperación de Parámetros]
+        E --> F[Validación de Memoria]
+        F --> G[Ejecución de Función de Syscall]
+        G --> H[Generación de Resultado]
+        H --> I[Retorno al Espacio de Usuario]
+    end
+    subgraph Proceso_de_Usuario
+        I --> J[Muestra Resultado al Usuario]
+    end
+```
