@@ -144,6 +144,9 @@ graph TD;
 - **Retorno al espacio de usuario**: Después de completar la operación, el kernel devuelve el control al programa de usuario, retornando el valor de la syscall para después continuar su ejecución.
 - **Muestra resultado usuario**: El programa de usuario puede procesar y mostrar el resultado de la llamada al sistema
 
+
+# Anexos
+
 ### Se agregan las Syscalls nuevas a la tabla de syscalls del kernel ⬇︎
 ![image](https://github.com/nickolasnolte1/OS-SysCall/assets/61555652/6dedc58d-d9a3-4265-860c-8a7c287dc63e)
 
