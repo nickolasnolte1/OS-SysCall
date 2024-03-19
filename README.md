@@ -100,7 +100,10 @@ Detallamos cómo preparar el entorno de compilación, descargar y descomprimir e
    b. asmlinkage long sys_puntoproducto(int __user *result, const int __user *v1, const int __user *v2, int len_v1, int len_v2);
    ```
 6. Se vuelve a compilar el kernel
-7. Se hace un reboot del sistema.
+
+7. Correr estos comandos: `sudo make modules_install` y `sudo make install`
+8. Se hace un reboot del sistema.
+9. Verificar cuál es la versión de Kernel que se está usando. 
 
 # Programa de Prueba
 Se proporciona un programa de prueba en C que demuestra cómo invocar las nuevas system calls desde el espacio de usuario. Este programa pide al usuario que ingrese vectores para el cálculo del producto punto y una expresión para verificar si está balanceada, haciendo uso de las system calls sys_puntoproducto (386) y sys_expresioncerrada (385) respectivamente.
