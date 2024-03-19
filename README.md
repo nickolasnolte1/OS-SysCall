@@ -85,21 +85,22 @@ Detallamos cómo preparar el entorno de compilación, descargar y descomprimir e
 ## Pasos para compilar el Kernel modificado (con las nuevas Syscalls)
 1. Meter los 2 archivos escritos en lenguaje C dentro de la carpeta de Kernel, dentro de la máquina virtual.
 2. En el MakeFile dentro del Kernel, correr estos comandos:
-3. ```bash
+ ```bash
    a. obj-y += expresioncerrada.o
    b. obj-y += puntoproducto.o
-4. Declarar las SysCalls en la tabla de Syscalls:
-5. ```bash
+```
+3. Declarar las SysCalls en la tabla de Syscalls:
+4. ```bash
    385 common expresioncerrada sys_expresioncerrada
    386 common puntoproducto sys_puntoproducto
    ```
-6. Declarar los prototipos de las SysCalls:
+5. Declarar los prototipos de las SysCalls:
  ```bash
    a. asmlinkage long sys_expresioncerrada(const char __user *expression);
    b. asmlinkage long sys_puntoproducto(int __user *result, const int __user *v1, const int __user *v2, int len_v1, int len_v2);
    ```
-7. Se vuelve a compilar el kernel
-8. Se hace un reboot del sistema.
+6. Se vuelve a compilar el kernel
+7. Se hace un reboot del sistema.
 
 # Programa de Prueba
 Se proporciona un programa de prueba en C que demuestra cómo invocar las nuevas system calls desde el espacio de usuario. Este programa pide al usuario que ingrese vectores para el cálculo del producto punto y una expresión para verificar si está balanceada, haciendo uso de las system calls sys_puntoproducto (386) y sys_expresioncerrada (385) respectivamente.
