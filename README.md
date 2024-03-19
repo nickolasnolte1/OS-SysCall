@@ -40,7 +40,7 @@ El objetivo de este problema es desarrollar una función que determine si una ex
 La función de verificación de expresiones aritméticas se implementará como una system call en el kernel de Linux. El proceso para agregar esta system call implica los siguientes pasos:
 
 1. Implementación de la Función en el Kernel: Se desarrollará una función en C, en el código fuente del kernel que llevará a cabo la verificación de la expresión aritmética. Esta función recibirá como parámetro un puntero a la cadena que contiene la expresión y retornará un valor booleano indicando si la expresión está correctamente cerrada o no.
-2. Definición de la System Call: Se definirá una nueva system call en el kernel, que será el punto de entrada para invocar la función de verificación desde el espacio de usuario. Este tiene un número de identificación único 333.
+2. Definición de la System Call: Se definirá una nueva system call en el kernel, que será el punto de entrada para invocar la función de verificación desde el espacio de usuario. Este tiene un número de identificación único 385.
 4. Compilación del Kernel: Se recompilará el kernel de sistema operativo para incorporar la nueva system call.
 
 
@@ -49,7 +49,7 @@ La función de verificación de expresiones aritméticas se implementará como u
 El segundo problema consiste en desarrollar una función que calcule el producto punto de dos vectores de tamaño n. Esta función se implementará como una system call en el kernel de Linux, y se creará un programa de usuario que haga uso de esta system call para calcular el producto punto de dos vectores dados.
 
 ## Implementación de la System Call
-La función de cálculo del producto punto de vectores se implementará como una system call en el kernel de Linux. Similar al Problema 1, se sigue un proceso de implementación, definición, y compilación en el kernel de Linux. Esta system call se asigna con el número 334.
+La función de cálculo del producto punto de vectores se implementará como una system call en el kernel de Linux. Similar al Problema 1, se sigue un proceso de implementación, definición, y compilación en el kernel de Linux. Esta system call se asigna con el número 386.
 
 ## Pasos para compilar el Kernel (sin cambios)
 Detallamos cómo preparar el entorno de compilación, descargar y descomprimir el código fuente del kernel, instalar dependencias necesarias, y finalmente compilar y reinstalar el kernel modificado. Los pasos incluyen:
@@ -90,7 +90,7 @@ Detallamos cómo preparar el entorno de compilación, descargar y descomprimir e
 .......
 
 # Programa de Prueba
-Se proporciona un programa de prueba en C que demuestra cómo invocar las nuevas system calls desde el espacio de usuario. Este programa pide al usuario que ingrese vectores para el cálculo del producto punto y una expresión para verificar si está balanceada, haciendo uso de las system calls sys_puntoproducto (334) y sys_expresioncerrada (333) respectivamente.
+Se proporciona un programa de prueba en C que demuestra cómo invocar las nuevas system calls desde el espacio de usuario. Este programa pide al usuario que ingrese vectores para el cálculo del producto punto y una expresión para verificar si está balanceada, haciendo uso de las system calls sys_puntoproducto (386) y sys_expresioncerrada (385) respectivamente.
 
 Dentro de nuestro programa de prueba, incluimos la biblioteca estándar *unistd.h* del lenguaje de programación C que proporciona acceso a la API del sistema operativo POSIX (Interfaz de Programación de Aplicaciones para Sistemas Operativos Portátiles). Este archivo de cabecera define varios valores simbólicos y declara varias funciones que son útiles para realizar operaciones a bajo nivel, definiciones de números de system calls y constantes relacionadas con las llamadas al sistema. Esto permite a los programas en espacio de usuario invocar system calls de manera estándar y portátil entre diferentes variantes de UNIX Standar.
 
